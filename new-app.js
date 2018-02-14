@@ -6,9 +6,17 @@ var todos = [taskOne];
 
 $(document).ready(function(){
   $( "#submitTodo" ).click(function() {
+    event.preventDefault();
  // fetch form taskName and dueDate.
     var taskName = $("#taskName").val()
     var dueDate = $("#dueDate").val()
-    alert(taskName + " " + dueDate);
+    //alert(taskName + " " + dueDate);
+   $("#todoTable").append("<tr id= 'tablerow' ><td>" + taskName + "</td><td>" + dueDate + "</td><td><button id= 'doneBox'>Done</button></td></tr>");
+  // $("body").appendTo("<td>Text.</td>");
   });
+  $('#doneBox').click(function() {
+    event.preventDefault();
+    $("#todonesList").append("#tablerow");
+  });
+
 })
